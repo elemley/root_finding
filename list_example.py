@@ -5,7 +5,7 @@ from random import *
 
 #Note this is specified def f_string():
 def f_string():
-    fn_string = "pow(x,3)-x-exp(x)-1"
+    fn_string = "pow(x,3)-x-exp(x)-2"
     return fn_string
 
 def f(x):
@@ -19,6 +19,26 @@ def f(x):
 def main():
     print(f(1.0))
     print(f_string())
+
+    x_list = [] #initialize lists with no elements
+    f_list = []
+    #write a loop to fill the lists
+    a = 1.0
+    b = 4.0
+    dx = 0.25
+    N = (int)((b-a)/dx)+1
+    for i in range(0,N):
+        x = i*dx + a
+        x_list.append(x)
+        f_list.append(f(x))
+
+    #x_list.insert(0,3.0)
+    #x_list.pop(0)
+    #x_list.reverse()
+
+    print(x_list)
+    print(f_list)
+
 
 
 
