@@ -298,21 +298,21 @@ def FunctionRootPlot111(x,xlabel,y_func,y_func_label,root_data,root_data_label,t
     n=200
     x_fit,y_fit = line_plot(x,y_func,n)
     plt.plot(x_fit, y_fit, c='r', linestyle="-", linewidth=2.0, label=y_func_label)
-
+    """
     xmin = min(x_fit)
     xmax = max(x_fit)
     ymin = min(y_fit)
     ymax = max(y_fit)
-
     delta_y = ymax - ymin
+    """
 
     for i in range(0, len(root_data)):
-        circle = plt.Circle((root_data[i], 0.0), 0.025*delta_y, fc='b')
+        circle = plt.Circle((root_data[i], 0.0), 0.15, fc='b')
         plt.gca().add_patch(circle)
 
     plt.savefig(filename)
     plt.legend(loc=0)
-    plt.axis('equal')
+    plt.axis('square')
     plt.show()
 
 
