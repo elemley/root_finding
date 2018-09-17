@@ -16,27 +16,47 @@ def f(x):
     return tmp
 
 def main():
-    a = 2.0
-    b = 3.0
-    x_start = 0.0
-    x_end = 4.0
-    root_approx = [a,b]
-    bisect = (a+b)/2
-    root_approx.append(bisect)
+    a = 2.0     #left side of bracketing values for root
+    b = 3.0     #right side of bracketing values for root
+
+    if f(a)*f(b) < 0:
+
+        rel_err_stop = 1e-5     #adjust as needed...
+        rel_err = 1.1*rel_err_stop  #set value large enough to start process
+        count = 0
+        max_iter = 1000
+
+        while rel_err > rel_err_stop and count < max_iter:
+            count+=1
+            xns = (a+b)/2.0
+            if f(a)*f(xns)<0:
+                b = xns
+            else:
+                a = xns
+            if count > 1:
+                rel_err = abs((xns-xns_old)/xns)
+            xns_old = xns
+
+            #rel_err-=0.01*1e-5
+
+        print(count)
+        print(rel_err)
+    else:
+        print("Oops your a and b values don't bracket the root" )
+
+
+
+
+
+
+
+
+
+
+
 
     """
-    dx = .01
-    N = (int)((b-a)/dx)
-    x = []
-    fx = []
-    for i in range(0,N):
-        x.append(i*dx+a)
-        fx.append(f(x[i]))
-    #print(x,fx)
-    """
-
     x = np.linspace(x_start, x_end, 100)
-
 
     function_name = f_string()
     title_base = "Plot of " + function_name
@@ -49,7 +69,7 @@ def main():
 
     FunctionRootPlot111(x,xlabel,f,ylabel,root_approx,root_data_label,title,filename)
     #LinePlot111(x,fx,xlabel,ylabel,title,filename)
-
+    """
 
 
 
@@ -59,7 +79,7 @@ if __name__ == '__main__':
 
 
 """max_iterations = 1000
-count = 0
+count = 0#left side of bracketing values for root
 xns = [(a+b)/2.0]
 err_stop = 0.0001
 relerr=[1.1*err_stop]
@@ -93,3 +113,13 @@ relerr.pop(0)
 
 
 
+"""
+    dx = .01
+    N = (int)((b-a)/dx)
+    x = []
+    fx = []
+    for i in range(0,N):
+        x.append(i*dx+a)
+        fx.append(f(x[i]))
+    #print(x,fx)
+    """
