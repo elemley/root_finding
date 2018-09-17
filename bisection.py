@@ -5,7 +5,7 @@ from random import *
 
 #Note this is specified def f_string():
 def f_string():
-    fn_string = "pow(x,3)-x-exp(x)-1"
+    fn_string = "pow(x,3)-x-exp(x)-2"
     return fn_string
 
 def f(x):
@@ -16,16 +16,17 @@ def f(x):
     return tmp
 
 def main():
-    a = -1.0
-    b = 0.0
+    a = 2.0
+    b = 4.0
     dx = .01
     N = (int)((b-a)/dx)
     x = []
     fx = []
-    for i in range(0,N):
+    for i in range(0,N+1):
         x.append(i*dx+a)
         fx.append(f(x[i]))
-    #print(x,fx)
+    print(x)
+    #print(fx)
 
     function_name = f_string()
     title_base = "Plot of " + function_name

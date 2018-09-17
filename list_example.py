@@ -32,9 +32,9 @@ def main():
         x_list.append(x)
         f_list.append(f(x))
 
-    #x_list.insert(0,3.0)
-    #x_list.pop(0)
-    #x_list.reverse()
+    x_list.insert(0,3.0)
+    x_list.pop(0)
+    x_list.reverse()
 
     print(x_list)
     print(f_list)

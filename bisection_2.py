@@ -24,9 +24,6 @@ def main():
     bisect = (a+b)/2
     root_approx.append(bisect)
 
-
-
-
     """
     dx = .01
     N = (int)((b-a)/dx)
