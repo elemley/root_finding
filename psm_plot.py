@@ -312,7 +312,7 @@ def FunctionRootPlot111(x,xlabel,y_func,y_func_label,root_data,root_data_label,t
 
     plt.savefig(filename)
     plt.legend(loc=0)
-    plt.axis('square')
+    plt.axis('auto')
     plt.show()
 
 

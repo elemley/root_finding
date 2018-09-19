@@ -5,6 +5,7 @@ from random import *
 
 #Note this is specified def f_string():
 def f_string():
+    #fn_string = "1.2*pow(x,3)+2*pow(x,2)-20*x-10"
     fn_string = "pow(x,3)-x-exp(x)-2"
     return fn_string
 
@@ -18,10 +19,13 @@ def f(x):
 def main():
     a = 2.0     #left side of bracketing values for root
     b = 3.0     #right side of bracketing values for root
+    x_start = 0.0
+    x_end = 10.0
+    root_approx = [a,b]
 
     if f(a)*f(b) < 0:
 
-        rel_err_stop = 1e-5     #adjust as needed...
+        rel_err_stop = 1e-2     #adjust as needed...
         rel_err = 1.1*rel_err_stop  #set value large enough to start process
         count = 0
         max_iter = 1000
@@ -29,6 +33,7 @@ def main():
         while rel_err > rel_err_stop and count < max_iter:
             count+=1
             xns = (a+b)/2.0
+            root_approx.append(xns)
             if f(a)*f(xns)<0:
                 b = xns
             else:
@@ -41,21 +46,10 @@ def main():
 
         print(count)
         print(rel_err)
+        print(root_approx)
     else:
         print("Oops your a and b values don't bracket the root" )
 
-
-
-
-
-
-
-
-
-
-
-
-    """
     x = np.linspace(x_start, x_end, 100)
 
     function_name = f_string()
@@ -69,16 +63,14 @@ def main():
 
     FunctionRootPlot111(x,xlabel,f,ylabel,root_approx,root_data_label,title,filename)
     #LinePlot111(x,fx,xlabel,ylabel,title,filename)
-    """
-
-
 
 
 if __name__ == '__main__':
     main()
 
 
-"""max_iterations = 1000
+"""
+max_iterations = 1000
 count = 0#left side of bracketing values for root
 xns = [(a+b)/2.0]
 err_stop = 0.0001
@@ -104,16 +96,8 @@ if f(a)*f(b) < 0:
 else:
     print "Sorry please edit your interval values a, b"
 relerr.pop(0)
-"""
 
 
-
-
-
-
-
-
-"""
     dx = .01
     N = (int)((b-a)/dx)
     x = []
