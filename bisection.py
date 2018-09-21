@@ -5,7 +5,7 @@ from random import *
 
 #Note this is specified def f_string():
 def f_string():
-    fn_string = "pow(x,3)-x-exp(x)-2"
+    fn_string = "x-2*exp(-x)"
     return fn_string
 
 def f(x):
@@ -16,8 +16,8 @@ def f(x):
     return tmp
 
 def main():
-    a = 2.0
-    b = 4.0
+    a = 0.0
+    b = 1.0
     dx = .01
     N = (int)((b-a)/dx)
     x = []

@@ -6,26 +6,25 @@ from random import *
 #Note this is specified def f_string():
 def f_string():
     #fn_string = "1.2*pow(x,3)+2*pow(x,2)-20*x-10"
-    fn_string = "pow(x,3)-x-exp(x)-2"
+    #fn_string = "pow(x,3)-x-exp(x)-2"
+    fn_string = "x-2*exp(-x)"
     return fn_string
 
 def f(x):
-    #tmp = 1.2*pow(x,3)+2*pow(x,2)-20*x-10
-    #tmp = x - 2.0*exp(-x)
     string = f_string()
     tmp = eval(string)
     return tmp
 
 def main():
-    a = 2.0     #left side of bracketing values for root
-    b = 3.0     #right side of bracketing values for root
+    a = 0.0     #left side of bracketing values for root
+    b = 1.0     #right side of bracketing values for root
     x_start = 0.0
     x_end = 10.0
     root_approx = [a,b]
 
     if f(a)*f(b) < 0:
 
-        rel_err_stop = 1e-2     #adjust as needed...
+        rel_err_stop = 1e-5     #adjust as needed...
         rel_err = 1.1*rel_err_stop  #set value large enough to start process
         count = 0
         max_iter = 1000
@@ -40,16 +39,19 @@ def main():
                 a = xns
             if count > 1:
                 rel_err = abs((xns-xns_old)/xns)
-            xns_old = xns
 
-            #rel_err-=0.01*1e-5
+                #rel_err-=0.01*1e-5
+
+            xns_old = xns
 
         print(count)
         print(rel_err)
         print(root_approx)
+        print(xns)
     else:
         print("Oops your a and b values don't bracket the root" )
 
+    """
     x = np.linspace(x_start, x_end, 100)
 
     function_name = f_string()
@@ -63,6 +65,7 @@ def main():
 
     FunctionRootPlot111(x,xlabel,f,ylabel,root_approx,root_data_label,title,filename)
     #LinePlot111(x,fx,xlabel,ylabel,title,filename)
+    """
 
 
 if __name__ == '__main__':
