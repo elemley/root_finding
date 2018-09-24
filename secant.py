@@ -36,11 +36,14 @@ def main():
         if count > 1:
             rel_err = abs((x3-x2)/x3)
 
-        x1=
+        x1=x2
+        x2=x3
     print(count)
     print(rel_err)
     print(root_approx)
-    print(xns)
+    print(x3)
 
 
 if __name__ == '__main__':
+    main()
+
