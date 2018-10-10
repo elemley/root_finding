@@ -7,7 +7,7 @@ from random import *
 def f_string():
     #fn_string = "1.2*pow(x,3)+2*pow(x,2)-20*x-10"
     #fn_string = "pow(x,3)-x-exp(x)-2"
-    fn_string = "x-2*exp(-x)"
+    fn_string = "x*exp(0.5*x)+1.2*x -5"
     return fn_string
 
 def f(x):
@@ -16,8 +16,8 @@ def f(x):
     return tmp
 
 def main():
-    a = 0.0     #left side of bracketing values for root
-    b = 1.0     #right side of bracketing values for root
+    a = 1.0     #left side of bracketing values for root
+    b = 2.0     #right side of bracketing values for root
     x_start = 0.0
     x_end = 10.0
     root_approx = [a,b]
