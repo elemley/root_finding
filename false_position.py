@@ -23,8 +23,10 @@ def main():
     x_end = 10.0
     root_approx = [a,b]
 
-    FunctionRootPlot111(x,xlabel,f,ylabel,root_approx,root_data_label,title,filename)
+    #FunctionRootPlot111(x,xlabel,f,ylabel,root_approx,root_data_label,title,filename)
     #LinePlot111(x,fx,xlabel,ylabel,title,filename)
 
 
 if __name__ == '__main__':
+    main()
+

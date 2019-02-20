@@ -28,21 +28,8 @@ def main():
         rel_err = 1.1*rel_err_stop  #set value large enough to start process
         count = 0
         max_iter = 1000
+        #Where the bisection technique goes
 
-        while rel_err > rel_err_stop and count < max_iter:
-            count+=1
-            xns = (a+b)/2.0
-            root_approx.append(xns)
-            if f(a)*f(xns)<0:
-                b = xns
-            else:
-                a = xns
-            if count > 1:
-                rel_err = abs((xns-xns_old)/xns)
-
-                #rel_err-=0.01*1e-5
-
-            xns_old = xns
 
         print(count)
         print(rel_err)
@@ -57,7 +44,7 @@ def main():
     function_name = f_string()
     title_base = "Plot of " + function_name
     title = title_base
-    filename = "bisection_"+function_name+".png"
+    filename = "bisection_2.png"
     xlabel = "x"
     ylabel = "f(x)"
     root_data_label = "root approximations"
@@ -68,45 +55,27 @@ def main():
     """
 
 
+
 if __name__ == '__main__':
     main()
 
 
+
+
 """
-max_iterations = 1000
-count = 0#left side of bracketing values for root
-xns = [(a+b)/2.0]
-err_stop = 0.0001
-relerr=[1.1*err_stop]
+while rel_err > rel_err_stop and count < max_iter:
+    count += 1
+    xns = (a + b) / 2.0
+    root_approx.append(xns)
+    if f(a) * f(xns) < 0:
+        b = xns
+    else:
+        a = xns
+    if count > 1:
+        rel_err = abs((xns - xns_old) / xns)
 
-if f(a)*f(b) < 0:
-    print "Specified Interval OK. Proceeding with bisection method"
+        # rel_err-=0.01*1e-5
 
-    while relerr[count] > err_stop and count < max_iterations:
-        count += 1
-        if f(a)*f(xns[count -1]) < 0:
-            b=xns[count-1]
-            root_approx.append(b)
-        else:
-            a = xns[count-1]
-            root_approx.append(a)
-        xns.append((a+b)/2)
-        tmp = abs((xns[count]-xns[count -1])/xns[count])
-        relerr.append(tmp)
-        print a, b, xns[count], relerr[count]
+    xns_old = xns
 
-    #print xns, relerr
-else:
-    print "Sorry please edit your interval values a, b"
-relerr.pop(0)
-
-
-    dx = .01
-    N = (int)((b-a)/dx)
-    x = []
-    fx = []
-    for i in range(0,N):
-        x.append(i*dx+a)
-        fx.append(f(x[i]))
-    #print(x,fx)
-    """
+"""
