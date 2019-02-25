@@ -23,7 +23,18 @@ def main():
     x_end = 10.0
     root_approx = [a,b]
 
-    #FunctionRootPlot111(x,xlabel,f,ylabel,root_approx,root_data_label,title,filename)
+    x = np.linspace(x_start, x_end, 100)
+
+    function_name = f_string()
+    title_base = "Plot of " + function_name
+    title = title_base
+    filename = "bisection_2.png"
+    xlabel = "x"
+    ylabel = "f(x)"
+    root_data_label = "root approximations"
+    y_func_label = function_name
+
+    FunctionRootPlot111(x,xlabel,f,ylabel,root_approx,root_data_label,title,filename)
     #LinePlot111(x,fx,xlabel,ylabel,title,filename)
 
 

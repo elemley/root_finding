@@ -5,19 +5,17 @@ from random import *
 
 #Note this is specified def f_string():
 def f_string():
-    fn_string = "pow(x,3)-x-exp(x)-1"
+    fn_string = "pow(x,3)-x-exp(x)-1+y"
+    #fn_string = "-0.3*x**3"
     return fn_string
 
-def f(x):
-    #tmp = 1.2*pow(x,3)+2*pow(x,2)-20*x-10
-    #tmp = x - 2.0*exp(-x)
+def f(x,y):
     string = f_string()
     tmp = eval(string)
     return tmp
 
-#Below is a function definition
 def main():
-    print(f(1.0))
+    print(f(1.0,-0.5))
     print(f_string())
 
 
