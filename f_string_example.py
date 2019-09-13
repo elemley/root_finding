@@ -15,10 +15,12 @@ def f(x,y):
     return tmp
 
 def main():
-    print(f(1.0,-0.5))
-    print(f_string())
-
-
+    x = 1.0
+    y = -0.5
+    print(f(x,y))
+    print("x=", x)
+    print("y=", y)
+    print("f(x,y)=", f_string(),"=",f(x,y))
 
 if __name__ == '__main__':
     main()

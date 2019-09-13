@@ -1,5 +1,5 @@
 from math import *
-import scipy as sp
+import numpy as np
 from psm_plot import *
 from random import *
 
@@ -38,7 +38,6 @@ def main():
     else:
         print("Oops your a and b values don't bracket the root" )
 
-    """
     x = np.linspace(x_start, x_end, 100)
 
     function_name = f_string()
@@ -52,7 +51,7 @@ def main():
 
     FunctionRootPlot111(x,xlabel,f,ylabel,root_approx,root_data_label,title,filename)
     #LinePlot111(x,fx,xlabel,ylabel,title,filename)
-    """
+
 
 
 

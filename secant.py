@@ -1,5 +1,5 @@
 from math import *
-import scipy as sp
+import numpy as np
 from psm_plot import *
 from random import *
 

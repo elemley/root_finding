@@ -179,7 +179,7 @@ def ThreeLineColorsPlot111(x,y1,y1label,y2,y2label,y3,y3label, xlabel,ylabel,tit
     plt.legend(loc=0)
     plt.show()
 
-def FourLineColorsPlot111(x,y1,y1label,y2,y2label,y3,y3label, y4, y4_label, xlabel,ylabel,title,filename):
+def FourLineColorsPlot111(x,y1,y1label,y2,y2label,y3,y3label, y4, y4label, xlabel,ylabel,title,filename):
     fig1 = plt.figure()
     plt.xlabel(xlabel)
     plt.ylabel(ylabel)
@@ -188,7 +188,7 @@ def FourLineColorsPlot111(x,y1,y1label,y2,y2label,y3,y3label, y4, y4_label, xlab
     plt.plot(x,y1,c='r',linestyle="-",label=y1label)
     plt.plot(x, y2, c='b', linestyle="--", label=y2label)
     plt.plot(x, y3, c='g', linestyle=":", label=y3label)
-    plt.plot(x, y4, c='k', linestyle="-", label=y3label)
+    plt.plot(x, y4, c='k', linestyle="-", label=y4label)
     plt.savefig(filename)
     plt.legend(loc=0)
     plt.show()
@@ -206,6 +206,20 @@ def FiveLineColorsPlot111(x,y1,y1label,y2,y2label,y3,y3label, y4, y4label, y5,y5
     plt.plot(x, y5, c='m', linestyle="--", label=y5label)
     plt.savefig(filename)
     plt.legend(loc=0)
+    plt.show()
+
+
+def TwoScatterColorsPlot111(x1, y1, y1label, x2, y2, y2label, xlabel, ylabel, title, filename):
+    fig1 = plt.figure()
+    # plt.xlim(min(x),max(x))
+    # plt.ylim(min(y), max(y))
+    plt.xlabel(xlabel)
+    plt.ylabel(ylabel)
+    plt.title(title)
+    plt.scatter(x1, y1,label=y1label)
+    plt.scatter(x2, y2,label=y2label)
+    plt.legend(loc=0)
+    plt.savefig(filename)
     plt.show()
 
 
@@ -307,12 +321,13 @@ def FunctionRootPlot111(x,xlabel,y_func,y_func_label,root_data,root_data_label,t
     """
 
     for i in range(0, len(root_data)):
-        circle = plt.Circle((root_data[i], 0.0), 0.15, fc='b')
-        plt.gca().add_patch(circle)
+        s = str(i+1)
+        circle = plt.text(root_data[i], 0.0, s, fontsize=14)
+        #plt.gca().add_patch(circle)
 
-    plt.savefig(filename)
     plt.legend(loc=0)
     plt.axis('auto')
+    plt.savefig(filename)
     plt.show()
 
 
