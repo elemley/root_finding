@@ -50,7 +50,7 @@ def main():
     x = np.linspace(x_start, x_end, 100)
 
     function_name = f_string()
-    function_syms = sympy.latex(sympy.simplify(function_name))
+    function_syms = sympy.latex(sympy.sympify(function_name))
     title_base = "Plot of " + "$" + function_syms + "$"
     title = title_base
     filename = "secant.png"
