@@ -19,8 +19,8 @@ def f(x):
     return tmp
 
 def main():
-    a = 0.2  # define and a and b (bracketing values)
-    b = 2
+    a = 0.0  # define and a and b (bracketing values)
+    b = 1
     x_start = a
     x_end = b
     xi = 0.4

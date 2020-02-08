@@ -25,7 +25,7 @@ def main():
     x_start = a
     x_end = b
     table = [["i","root approx.","rel. error"]]
-    err_stop = 1e-2
+    err_stop = 1e-6
     root_data = [a,b]
     if f(a) * f(b) < 0:
         rel_err = 1.1 * err_stop

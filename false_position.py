@@ -10,7 +10,7 @@ def f_string():
     fn_string = 'x - 2.0 * exp(-x)'
     #fn_string = "pow(x,3)-x-exp(x)-1+y"
     #fn_string = "-0.3*x**3"
-    fn_string = "(x**2)-(exp(x)/x)"
+    #fn_string = "(x**2)-(exp(x)/x)"
     return fn_string
 
 def f(x):
@@ -20,12 +20,12 @@ def f(x):
     return tmp
 
 def main():
-    a = 0.5  # define and a and b (bracketing values)
+    a = 0.0  # define and a and b (bracketing values)
     b = 1.0
     x_start = a
     x_end = b
     table = [["i","root approx.","rel. error"]]
-    err_stop = 1e-3
+    err_stop = 1e-6
     root_data = [a,b]
     if f(a) * f(b) < 0:
         rel_err = 1.1 * err_stop
