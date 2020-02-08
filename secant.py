@@ -14,7 +14,6 @@ def f_string():
     return fn_string
 
 def f(x):
-    # tmp = 1.2*pow(x,3)+2*pow(x,2)-20*x-10
     string = f_string()
     tmp = eval(string)
     return tmp
